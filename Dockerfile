@@ -1,22 +1,4 @@
 FROM php:7.3.5-fpm-alpine3.9 as base
-RUN apk add --no-cache \
-        libmcrypt-dev \
-        zlib-dev \
-        libzip-dev \
-        libltdl \
-        libpng \
-        libpng-dev \
-        ; \
-    docker-php-ext-install gd pdo_mysql opcache \
-        ; \
-    apk del \
-        libmcrypt-dev \
-        zlib-dev \
-        libzip-dev \
-        libltdl \
-        libpng \
-        libpng-dev \
-        ;
 
 FROM nginx:1.16.0-alpine as nginx-builder
 
